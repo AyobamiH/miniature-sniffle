@@ -1,0 +1,99 @@
+import random 
+from prettytable import PrettyTable
+
+
+chargeNurse = input("Who is the charge nurse?")
+
+medNurse = input ("Who is the med nurse?")
+
+census = input("What is the census?")
+
+
+
+minimums = input ("Whats are the staffing minimums? ")
+
+
+
+
+print ("\n")
+
+def rotate(lst,x):
+    copy = list(lst)
+    for i in range(len(lst)):
+        if x<0:
+            lst[i+x] = copy[i]
+        else:
+            lst[i] = copy[i-x]
+
+
+
+staff = ['Jake', 'Bob', 'Suzy', 'Pete', 'Gale']
+
+random.shuffle(staff)
+
+staffBreaks = ['Jake', 'Bob', 'Suzy', 'Pete', 'Gale']
+
+
+
+
+
+
+sits = ["", 'Co\'s', 'MMC', 'ML', 'rounds', 'bathroom']
+
+hourslots = ['330', '430', '530', '630', '730', '830', '930', '1030']
+
+breaks = ['530', '630', '700', '730', '800']
+
+z = PrettyTable(['Charge Nurse', 'MedNurse'])
+z.add_row([chargeNurse, medNurse])
+print(z)
+
+print("\n Census = "  + census + "\n")
+
+
+t = PrettyTable(['COs', 'M. Mc', 'M. L', 'Rounds', 'Bathrooms'])
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+rotate(staff, 1)
+t.add_row(staff)
+
+t.add_column("TIME",[330, 430, 530, 630, 730, 830,
+930, 1030])
+
+
+
+
+
+print (t, "\n")
+
+chore1 = staff[2]
+chore2 = staff[0]
+chore3 = staff[4]
+chore4 = staff[1]
+chore5 = staff[3]
+
+
+x = PrettyTable(['Vitals', 'Garbage', 'Enviro', 'Searches', 'Clean Seclusion'])
+x.add_row([chore1, chore2, chore3, chore4, chore5])
+
+print(x)
+
+
+
+
+
+
+
+
+
